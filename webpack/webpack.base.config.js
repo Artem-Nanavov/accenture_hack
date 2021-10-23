@@ -6,7 +6,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
-const { srcPath, publicPath, componentsPath, corePath, rootPath } = require('../config/paths');
+const { srcPath, publicPath, componentsPath, corePath, rootPath, assetsPath } = require('../config/paths');
 
 module.exports = {
 	entry: [path.resolve(rootPath, 'core/index.tsx')],
@@ -17,6 +17,7 @@ module.exports = {
 			'react-dom': '@hot-loader/react-dom',
 			components: path.resolve(componentsPath, './'),
 			core: path.resolve(corePath, './'),
+			assets: path.resolve(assetsPath, './'),
 		},
 	},
 	output: {
