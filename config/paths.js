@@ -8,9 +8,11 @@ const publicPath = path.resolve(rootPath, './public');
 const componentsPath = path.resolve(rootPath, './components');
 const corePath = path.resolve(rootPath, './core');
 const assetsPath = path.resolve(rootPath, './assets');
+const pagesPath = path.resolve(rootPath, './pages');
 
 module.exports = {
 	srcPath,
+	pagesPath,
 	assetsPath,
 	rootPath,
 	corePath,

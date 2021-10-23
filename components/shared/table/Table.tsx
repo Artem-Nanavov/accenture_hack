@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 
 import style from './style.scss';
 
@@ -35,8 +36,12 @@ const mockData = [
 	},
 ];
 
-const Table = () => (
-	<table className={style.table}>
+interface ITable {
+	className?: string;
+}
+
+const Table = ({ className }: ITable) => (
+	<table className={cn(style.table, className)}>
 		<thead>
 			<tr>
 				<td>Имя</td>

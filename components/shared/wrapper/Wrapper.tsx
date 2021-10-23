@@ -1,10 +1,13 @@
 import React from 'react';
+import cn from 'classnames';
+
 import style from './style.scss';
 
 interface IProps {
+	className?: string;
 	children: JSX.Element[] | JSX.Element;
 }
 
-const Wrapper = ({ children }: IProps) => <div className={style.wrapper}>{children}</div>;
+const Wrapper = ({ children, className }: IProps) => <div className={cn(style.wrapper, className)}>{children}</div>;
 
 export default Wrapper;

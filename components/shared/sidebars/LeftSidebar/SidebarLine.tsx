@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const SidebarLine = ({ header, url, image }: IProps) => (
-	<NavLink to={url} className={style.sidebarLine} activeClassName={style.activeSidebarLine}>
+	<NavLink exact to={url} className={style.sidebarLine} activeClassName={style.activeSidebarLine}>
 		<img src={image} alt={header} />
 		{header}
 	</NavLink>
