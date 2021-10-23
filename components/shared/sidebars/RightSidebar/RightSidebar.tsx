@@ -2,8 +2,9 @@ import React from 'react';
 
 import Profile from 'components/shared/sidebars/Profile/Profile';
 import CompareInfoBlock from 'components/shared/compareInfoBlock/CompareInfoBlock';
-
+import InvestInfoGraph from 'components/shared/investsInfoGraph/InvestInfoGraph';
 import InvestsComponents from 'components/shared/investsInfo';
+
 import profile from '../../../../assets/images/png/profile.png';
 
 import style from './style.scss';
@@ -26,6 +27,7 @@ const RightSidebar = () => (
 			isPlus={mockTestData.isPlus}
 			percent={mockTestData.percent}
 		/>
+		<InvestInfoGraph />
 
 		<InvestsComponents />
 	</div>
