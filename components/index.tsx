@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Sidebar from 'components/shared/sidebar/Sidebar';
+import LeftSidebar from 'components/shared/sidebars/LeftSidebar/LeftSidebar';
+import Clients from 'components/clients/Clients';
 import Home from './home';
 
 import style from '../core/styles/rootstyle.scss';
 
 const Routes = () => (
 	<div className={style.root}>
-		<Sidebar />
+		<LeftSidebar />
 		<Switch>
 			<Route exact path="/" component={Home} />
+			<Route exact path="/clients" component={Clients} />
 		</Switch>
 	</div>
 );
