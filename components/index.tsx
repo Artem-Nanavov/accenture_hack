@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LeftSidebar from 'components/shared/sidebars/LeftSidebar/LeftSidebar';
-import Clients from 'components/clients/Clients';
+import Clients from 'pages/clients/Clients';
 import Home from './home';
 
 import style from '../core/styles/rootstyle.scss';
@@ -11,7 +11,7 @@ const Routes = () => (
 		<LeftSidebar />
 		<Switch>
 			<Route exact path="/" component={Home} />
-			<Route exact path="/clients" component={Clients} />
+			<Route exact path="/clients/:id" component={Clients} />
 		</Switch>
 	</div>
 );

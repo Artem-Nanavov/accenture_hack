@@ -27,6 +27,7 @@
 			"components/*":["./components/*"],
 			"core/*":["./core/*"],
 			"assets/*":["./assets/*"],
+			"pages/*":["./pages/*"],
 		},   
 	},
 	"exclude": ["node_modules"]
