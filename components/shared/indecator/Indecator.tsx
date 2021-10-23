@@ -8,7 +8,7 @@ interface IProps {
 
 const Indicator = ({ isPlus }: IProps) => (
 	<div className={isPlus ? style.imageContainer : style.imageContainerRevert}>
-		<Rectangle color={isPlus ? '#6B8E23' : '#E4514D'} />
+		<Rectangle color={isPlus ? '#5EFF5A' : '#E4514D'} />
 	</div>
 );
 

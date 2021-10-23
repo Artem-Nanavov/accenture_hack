@@ -17,19 +17,29 @@ const mockTestData = {
 	percent: 10,
 };
 
-const RightSidebar = () => (
+interface IRightSidebar {
+	isViewInvestInfoGraph?: boolean;
+	isViewCompareInfoBlock?: boolean;
+	isViewInvestsComponents?: boolean;
+}
+
+const RightSidebar = ({ isViewInvestInfoGraph, isViewCompareInfoBlock, isViewInvestsComponents }: IRightSidebar) => (
 	<div className={style.rightSidebar}>
 		<Profile image={profile} name="Валерия Кавасаки" />
-		<CompareInfoBlock
-			count={mockTestData.count}
-			header={mockTestData.header}
-			description={mockTestData.description}
-			isPlus={mockTestData.isPlus}
-			percent={mockTestData.percent}
-		/>
-		<InvestInfoGraph />
 
-		<InvestsComponents />
+		{!isViewCompareInfoBlock && (
+			<CompareInfoBlock
+				count={mockTestData.count}
+				header={mockTestData.header}
+				description={mockTestData.description}
+				isPlus={mockTestData.isPlus}
+				percent={mockTestData.percent}
+			/>
+		)}
+
+		{!isViewInvestInfoGraph && <InvestInfoGraph />}
+
+		{!isViewInvestsComponents && <InvestsComponents />}
 	</div>
 );
 

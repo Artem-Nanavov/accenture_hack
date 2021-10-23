@@ -15,7 +15,7 @@ const lines = [
 	},
 	{
 		name: 'Продукты',
-		url: '/products',
+		url: '/products/all',
 		image: product,
 	},
 	{
