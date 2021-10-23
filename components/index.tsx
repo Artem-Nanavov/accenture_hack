@@ -4,6 +4,7 @@ import LeftSidebar from 'components/shared/sidebars/LeftSidebar/LeftSidebar';
 import Clients from 'pages/clients/Clients';
 import Login from 'components/auth/login/Login';
 import Products from 'pages/products';
+import Branches from 'pages/branches/Branches';
 import Home from './home';
 
 import style from '../core/styles/rootstyle.scss';
@@ -17,6 +18,7 @@ const Routes = () => {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/clients/:id" component={Clients} />
 				<Route exact path="/products/:id" component={Products} />
+				<Route exact path="/branches" component={Branches} />
 				<Route exact path="/login">
 					<Login setPath={setPath} />
 				</Route>

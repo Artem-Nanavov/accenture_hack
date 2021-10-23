@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Home = () => <h1>ЗАГАЛОВОК</h1>;
+const Home = () => <div>aassa</div>;
 
 export default Home;
