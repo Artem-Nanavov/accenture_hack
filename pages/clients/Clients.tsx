@@ -7,11 +7,8 @@ import RightSidebar from 'components/shared/sidebars/RightSidebar/RightSidebar';
 import HorChart from 'components/shared/HorChart';
 import Table from 'components/shared/table/Table';
 
+import DoughnutCard from 'components/shared/DoughnutCard';
 import styles from './styles.scss';
-
-const data1 = [20000, 31000, 25000, 20000, 33000, 19000];
-const data2 = [20000, 31000, 25000, 20000, 33000, 19000];
-const data3 = [20000, 31000, 25000, 20000, 33000, 19000];
 
 const Clients = () => {
 	const [typeOfChart, setTypeOfChart] = useState<'newClients' | 'profit' | 'operations'>('newClients');
