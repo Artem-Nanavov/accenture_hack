@@ -1,4 +1,7 @@
 .rightSidebar {
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
 	padding: 25px;
+	gap: 30px;
 }

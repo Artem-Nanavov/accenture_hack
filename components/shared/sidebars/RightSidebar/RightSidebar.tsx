@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ProgressTable from 'components/shared/progressTable/ProgressTable';
 import Profile from 'components/shared/sidebars/Profile/Profile';
 import CompareInfoBlock from 'components/shared/compareInfoBlock/CompareInfoBlock';
 
@@ -25,6 +26,7 @@ const RightSidebar = () => (
 			isPlus={mockTestData.isPlus}
 			percent={mockTestData.percent}
 		/>
+		<ProgressTable />
 	</div>
 );
 

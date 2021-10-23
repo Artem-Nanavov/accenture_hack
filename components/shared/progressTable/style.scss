@@ -1,0 +1,46 @@
+.tableContainer {
+	background: rgba(62, 58, 80, 0.45);
+	padding: 20px;
+	border-radius: 10px;
+
+	.tableLine {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.headerContainer {
+		min-width: 100px;
+
+		.header {
+			color: white;
+			font-family: 'Raleway', sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 44px;
+		}
+	}
+
+	.quantity {
+		font-family: 'Raleway', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 44px;
+		color: rgba(255, 255, 255, 0.45);
+	}
+
+	.moneyContainer {
+		min-width: 75px;
+
+		.money {
+			font-family: 'Raleway', sans-serif;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 44px;
+			color: #FFFFFF;
+		}
+	}
+}
