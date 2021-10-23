@@ -1,7 +1,6 @@
 import React from 'react';
 
-import greenRectangle from '../../../assets/images/png/greenRectangle.png';
-import redRectangle from '../../../assets/images/png/redRectangle.png';
+import Rectangle from '../../../assets/images/rectengle/Rectangle';
 
 import style from './style.scss';
 
@@ -13,22 +12,18 @@ interface IProps {
 	percent: number;
 }
 
-const CompareInfoBlock = (props: IProps) => {
-	const { header, count, description, isPlus, percent } = props;
-
-	return (
-		<div className={style.compareContainer}>
-			<span className={style.title}>{header}</span>
-			<div className={style.counterContainer}>
-				<span className={style.counter}>{count}</span>
-				<div className={style.percentContainer}>
-					<img src={isPlus ? greenRectangle : redRectangle} alt={isPlus ? 'green rectangle' : 'red rectangle'} />
-					<span className={isPlus ? style.green : style.red}>{percent}%</span>
-				</div>
+const CompareInfoBlock = ({ header, count, description, isPlus, percent }: IProps) => (
+	<div className={style.compareContainer}>
+		<span className={style.title}>{header}</span>
+		<div className={style.counterContainer}>
+			<span className={style.counter}>{count}</span>
+			<div className={style.percentContainer}>
+				<Rectangle color={isPlus ? '#6B8E23' : '#E4514D'} />
+				<span className={isPlus ? style.green : style.red}>{percent}%</span>
 			</div>
-			<span className={style.description}>{description}</span>
 		</div>
-	);
-};
+		<span className={style.description}>{description}</span>
+	</div>
+);
 
 export default CompareInfoBlock;

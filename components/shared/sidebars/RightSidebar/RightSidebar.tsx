@@ -3,7 +3,7 @@ import React from 'react';
 import Profile from 'components/shared/sidebars/Profile/Profile';
 import CompareInfoBlock from 'components/shared/compareInfoBlock/CompareInfoBlock';
 
-import profile from '../../../../assets/images/png/profile.png';
+import profile from '../../../../assets/images/svg/profile.svg';
 
 import style from './style.scss';
 
