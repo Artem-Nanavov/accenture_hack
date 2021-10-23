@@ -1,0 +1,69 @@
+.compareContainer {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	gap: 5px;
+	background: rgba(62, 58, 80, 0.45);
+	border-radius: 10px;
+	padding: 16px 28px;
+
+	.title {
+		font-family: 'Raleway', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+	}
+
+	.counterContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 7px;
+
+		.counter {
+			font-family: 'Raleway', sans-serif;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 44px;
+		}
+
+		.percentContainer {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			gap: 3px;
+
+			img {
+				width: 18px;
+				height: 13px;
+				padding-bottom: 3px;
+				fill: red;
+			}
+
+			.green {
+				font-family: 'Raleway', sans-serif;
+				color: #6B8E23;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 20px;
+			}
+
+			.red {
+				font-family: 'Raleway', sans-serif;
+				color: #E4514D;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.description {
+		font-family: 'Raleway', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 16px;
+		color: rgba(255, 255, 255, 0.4);
+	}
+}
