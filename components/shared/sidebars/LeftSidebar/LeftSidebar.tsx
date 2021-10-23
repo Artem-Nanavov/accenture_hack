@@ -20,7 +20,7 @@ const lines = [
 	},
 	{
 		name: 'Филлиалы',
-		url: 'branches',
+		url: '/branches',
 		image: branch,
 	},
 ];

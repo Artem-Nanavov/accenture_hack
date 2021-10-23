@@ -7,6 +7,9 @@ interface IDoughnutCard {
 	title: string;
 	data: any[];
 	labels: any[];
+	isChoice: boolean;
+	handleChange?: (data: boolean) => void;
+	changeOption?: boolean;
 }
 
 const options = {
@@ -27,7 +30,7 @@ const options = {
 	},
 };
 
-const DoughnutCard = ({ title, data, labels }: IDoughnutCard) => {
+const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOption }: IDoughnutCard) => {
 	const d = useMemo(
 		() => ({
 			labels,
@@ -46,7 +49,15 @@ const DoughnutCard = ({ title, data, labels }: IDoughnutCard) => {
 
 	return (
 		<div className={styles.wrap}>
-			<p className={styles.title}>{title}</p>
+			{
+				isChoice && handleChange ?
+					<div className={styles.choiceContainer}>
+						<span onClick={() => handleChange(true)} className={changeOption ? styles.title3 : styles.title2}>Физические лица</span>
+						<span onClick={() => handleChange(false)} className={changeOption ? styles.title2 : styles.title3}>Юридические лица</span>
+					</div>
+					:
+					<p className={styles.title}>{title}</p>
+			}
 
 			<div className={styles.info}>
 				<div style={{ width: '160px', height: '160px' }}>

@@ -40,6 +40,7 @@
 	},
 	"homepage": "https://github.com/Artem-Nanavov/react-mobx-starter#readme",
 	"dependencies": {
+		"axios": "^0.23.0",
 		"chart.js": "^3.5.1",
 		"classnames": "^2.3.1",
 		"clean-webpack-plugin": "1.0.0",
