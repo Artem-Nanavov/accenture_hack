@@ -33,11 +33,12 @@
 			align-items: flex-end;
 			gap: 3px;
 
-			img {
-				width: 18px;
-				height: 13px;
-				padding-bottom: 3px;
-				fill: red;
+			.imageContainer {
+				padding-bottom: 1px;
+			}
+
+			.imageContainerRevert {
+				transform: rotate(180deg);
 			}
 
 			.green {
