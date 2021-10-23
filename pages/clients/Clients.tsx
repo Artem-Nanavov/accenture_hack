@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 import Wrapper from 'components/shared/wrapper/Wrapper';
 import WrapperWithSidebar from 'components/shared/wrapperWithSidebar/wrapperWithSidebar';
@@ -12,6 +13,13 @@ import styles from './styles.scss';
 
 const Clients = () => {
 	const [typeOfChart, setTypeOfChart] = useState<'newClients' | 'profit' | 'operations'>('newClients');
+
+	axios.get('http://127.20.10.3:8888/clients').then(data => {
+		console.log('==========>data', data);
+	})
+		.catch(e => {
+			console.log('==========>e', e)
+		})
 
 	return (
 		<WrapperWithSidebar>

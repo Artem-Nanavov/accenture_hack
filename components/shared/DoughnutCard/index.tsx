@@ -36,8 +36,7 @@ const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOptio
 			labels,
 			datasets: [
 				{
-					label: '# of Votes',
-					data,
+					data: data.map((_d) => _d.count),
 					backgroundColor: ['#6B8E23', '#FCA4FF', '#8E96FF'],
 					hoverOffset: 20,
 					borderWidth: 0,
