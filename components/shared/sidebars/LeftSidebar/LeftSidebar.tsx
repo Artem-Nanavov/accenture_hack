@@ -1,9 +1,9 @@
 import React from 'react';
 import SidebarLine from 'components/shared/sidebars/LeftSidebar/SidebarLine';
 
-import branch from '../../../../assets/images/svg/branch.svg';
-import client from '../../../../assets/images/svg/client.svg';
-import product from '../../../../assets/images/svg/product.svg';
+import branch from '../../../../assets/images/png/branch.png';
+import client from '../../../../assets/images/png/client.png';
+import product from '../../../../assets/images/png/product.png';
 
 import style from './style.scss';
 

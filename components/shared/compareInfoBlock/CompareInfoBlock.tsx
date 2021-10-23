@@ -18,7 +18,9 @@ const CompareInfoBlock = ({ header, count, description, isPlus, percent }: IProp
 		<div className={style.counterContainer}>
 			<span className={style.counter}>{count}</span>
 			<div className={style.percentContainer}>
-				<Rectangle color={isPlus ? '#6B8E23' : '#E4514D'} />
+				<div className={isPlus ? style.imageContainer : style.imageContainerRevert}>
+					<Rectangle color={isPlus ? '#6B8E23' : '#E4514D'} />
+				</div>
 				<span className={isPlus ? style.green : style.red}>{percent}%</span>
 			</div>
 		</div>
