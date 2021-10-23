@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Rectangle from '../../../assets/images/rectangle';
+import Indicator from 'components/shared/indecator/Indecator';
 
 import style from './style.scss';
 
@@ -18,9 +18,7 @@ const CompareInfoBlock = ({ header, count, description, isPlus, percent }: IProp
 		<div className={style.counterContainer}>
 			<span className={style.counter}>{count}</span>
 			<div className={style.percentContainer}>
-				<div className={isPlus ? style.imageContainer : style.imageContainerRevert}>
-					<Rectangle color={isPlus ? '#6B8E23' : '#E4514D'} />
-				</div>
+				<Indicator isPlus={isPlus} />
 				<span className={isPlus ? style.green : style.red}>{percent}%</span>
 			</div>
 		</div>
