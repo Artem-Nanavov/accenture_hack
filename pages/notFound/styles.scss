@@ -1,0 +1,27 @@
+.wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 230px;
+	line-height: 270px;
+	text-align: center;
+	color: #3E3A50;
+}
+
+.subTitle {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 38px;
+	line-height: 45px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.45);
+}
