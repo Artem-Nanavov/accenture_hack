@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import cn from 'classnames';
 
 import styles from './styles.scss';
 
@@ -10,6 +11,7 @@ interface IDoughnutCard {
 	isChoice: boolean;
 	handleChange?: (data: boolean) => void;
 	changeOption?: boolean;
+	changeColor?: boolean;
 }
 
 const options = {
@@ -30,20 +32,20 @@ const options = {
 	},
 };
 
-const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOption }: IDoughnutCard) => {
+const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOption, changeColor }: IDoughnutCard) => {
 	const d = useMemo(
 		() => ({
 			labels,
 			datasets: [
 				{
 					data: data.map((_d) => _d.count),
-					backgroundColor: ['#6B8E23', '#FCA4FF', '#8E96FF'],
+					backgroundColor: ['#6B8E23', '#8E96FF', changeColor ? '#E4514D' : '#FCA4FF'],
 					hoverOffset: 20,
 					borderWidth: 0,
 				},
 			],
 		}),
-		[data],
+		[data, changeColor],
 	);
 
 	return (
@@ -69,7 +71,7 @@ const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOptio
 				<div className={styles.labels}>
 					{labels.map((label, i) => (
 						<div key={label} className={styles.label}>
-							<div className={styles[`color_${i + 1}`]} />
+							<div className={cn(styles[`color_${i + 1}`], { [styles.c]: changeColor && i === 2 })} />
 
 							<p>{label}</p>
 						</div>

@@ -11,6 +11,7 @@ import CustomLine from 'components/shared/Line/Line';
 import DescriptionContainer from 'components/shared/DescriptionContainer/DescriptionContainer';
 import DoughnutCard from 'components/shared/DoughnutCard';
 
+import IsAuthWrapper from 'components/shared/IsAuthWrapper';
 import style from './style.scss';
 
 const data = ['г. Ростов-на-Дону, пер Куйбышевский, д. 122/30'];
@@ -26,59 +27,69 @@ const Branches = observer(() => {
 
 	useEffect(() => {
 		branchesStore.getClientsCircle('1');
+		branchesStore.getPlanData();
 	}, []);
 
-	console.log(toJS(branchesStore.clientsCircle));
+	console.log(toJS(branchesStore));
 
 	return (
-		<WrapperWithSidebar>
-			<Wrapper>
-				<div className={style.container}>
-					<div className={style.selectLine}>
-						<p onClick={() => setIsAll(true)} className={isAll ? style.headerLine : style.headerLineAll}>
-							Общее
-						</p>
-						<p onClick={() => setIsAll(false)} className={isAll ? style.headerLineAll : style.headerLine}>
-							Выбранный
-						</p>
-					</div>
-					{!isAll && <Select data={data} />}
-					<CustomLine />
-					{!isAll && (
-						<div className={style.descCont}>
-							<DescriptionContainer isRating={false} header="Управляющий" description="Викторов Алексей Николаевич" />
-							<DescriptionContainer isRating header="Рейтинг" description="1" />
+		<IsAuthWrapper>
+			<WrapperWithSidebar>
+				<Wrapper>
+					<div className={style.container}>
+						<div className={style.selectLine}>
+							<p onClick={() => setIsAll(true)} className={isAll ? style.headerLine : style.headerLineAll}>
+								Общее
+							</p>
+							<p onClick={() => setIsAll(false)} className={isAll ? style.headerLineAll : style.headerLine}>
+								Выбранный
+							</p>
 						</div>
-					)}
-					<div className={style.graphCont}>
-						{branchesStore.clientsCircle && (
-							<>
-								<DoughnutCard
-									changeOption={isIndividual}
-									handleChange={setIsIndividual}
-									isChoice={!isAll}
-									title="Физические лица"
-									data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
-									labels={labels}
-								/>
-
-								{!isAll ? (
-									<DoughnutCard isChoice={false} title="Выполнение плана" data={data3} labels={labels2} />
-								) : (
+						{!isAll && <Select data={data} />}
+						<CustomLine />
+						{!isAll && (
+							<div className={style.descCont}>
+								<DescriptionContainer isRating={false} header="Управляющий" description="Викторов Алексей Николаевич" />
+								<DescriptionContainer isRating header="Рейтинг" description="1" />
+							</div>
+						)}
+						<div className={style.graphCont}>
+							{branchesStore.clientsCircle && (
+								<>
 									<DoughnutCard
-										isChoice={false}
-										title="Юридические лица"
-										data={branchesStore.clientsCircle.is_legal_entity}
+										changeOption={isIndividual}
+										handleChange={setIsIndividual}
+										isChoice={!isAll}
+										title="Физические лица"
+										data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
 										labels={labels}
 									/>
-								)}
-							</>
-						)}
+
+									{!isAll ? (
+										<DoughnutCard
+											isChoice={false}
+											title="Выполнение плана"
+											changeColor
+											// @ts-ignore
+											data={Object.values(branchesStore.planData).map((v) => ({ count: v }))}
+											labels={labels2}
+										/>
+									) : (
+										<DoughnutCard
+											isChoice={false}
+											title="Юридические лица"
+											data={branchesStore.clientsCircle.is_legal_entity}
+											labels={labels}
+										/>
+									)}
+								</>
+							)}
+						</div>
 					</div>
-				</div>
-			</Wrapper>
-			<RightSidebar />
-		</WrapperWithSidebar>
+				</Wrapper>
+				<RightSidebar />
+			</WrapperWithSidebar>
+		</IsAuthWrapper>
 	);
 });
 

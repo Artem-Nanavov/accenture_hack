@@ -10,6 +10,8 @@ class BranchesStore {
 
 	@observable clientsCircle: any = null;
 
+	@observable planData: any = null;
+
 	constructor() {
 		makeAutoObservable(this);
 	}
@@ -20,7 +22,7 @@ class BranchesStore {
 
 	@action async getClientsCircle(branch_id: string) {
 		try {
-			const { data } = await axios.get(`http://192.168.43.16:8888/entity?branch_id=${branch_id}`);
+			const { data }: any = await axios.get(`/entity?branch_id=${branch_id}`);
 
 			if (data) {
 				this.clientsCircle = {
@@ -28,6 +30,26 @@ class BranchesStore {
 					other: data.filter((d: any) => !d.is_legal_entity),
 				};
 			}
+		} catch (e) {
+			// eslint-disable-next-line no-console
+			console.error('error', e.message);
+		}
+	}
+
+	@action async getPlanData() {
+		try {
+			const { data }: any = await axios.get('/plan');
+
+			console.log(data);
+
+			this.planData = data;
+
+			// if (data) {
+			// 	this.clientsCircle = {
+			// 		is_legal_entity: data.filter((d: any) => d.is_legal_entity),
+			// 		other: data.filter((d: any) => !d.is_legal_entity),
+			// 	};
+			// }
 		} catch (e) {
 			// eslint-disable-next-line no-console
 			console.error('error', e.message);
