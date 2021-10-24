@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"experimentalDecorators": true,
+    "experimentalDecorators": true,
 		"baseUrl": "./",
 		"outDir": "/dist",
 		"module": "esnext",
@@ -27,8 +29,9 @@
 			"components/*":["./components/*"],
 			"core/*":["./core/*"],
 			"assets/*":["./assets/*"],
-			"pages/*":["./pages/*"],
-		},   
+			"pages/*":["./pages/*"]
+		},
+		"lib": ["es6", "dom", "es2018.promise", "ES2017", "ES2016.Array.Include"]
 	},
 	"exclude": ["node_modules"]
 }

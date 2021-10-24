@@ -36,8 +36,7 @@ const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOptio
 			labels,
 			datasets: [
 				{
-					label: '# of Votes',
-					data,
+					data: data.map((_d) => _d.count),
 					backgroundColor: ['#6B8E23', '#FCA4FF', '#8E96FF'],
 					hoverOffset: 20,
 					borderWidth: 0,
@@ -49,15 +48,18 @@ const DoughnutCard = ({ title, data, labels, isChoice, handleChange, changeOptio
 
 	return (
 		<div className={styles.wrap}>
-			{
-				isChoice && handleChange ?
-					<div className={styles.choiceContainer}>
-						<span onClick={() => handleChange(true)} className={changeOption ? styles.title3 : styles.title2}>Физические лица</span>
-						<span onClick={() => handleChange(false)} className={changeOption ? styles.title2 : styles.title3}>Юридические лица</span>
-					</div>
-					:
-					<p className={styles.title}>{title}</p>
-			}
+			{isChoice && handleChange ? (
+				<div className={styles.choiceContainer}>
+					<span onClick={() => handleChange(true)} className={changeOption ? styles.title3 : styles.title2}>
+						Физические лица
+					</span>
+					<span onClick={() => handleChange(false)} className={changeOption ? styles.title2 : styles.title3}>
+						Юридические лица
+					</span>
+				</div>
+			) : (
+				<p className={styles.title}>{title}</p>
+			)}
 
 			<div className={styles.info}>
 				<div style={{ width: '160px', height: '160px' }}>

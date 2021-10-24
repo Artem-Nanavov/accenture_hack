@@ -47,7 +47,7 @@ const ChartLabel = ({ title, progress, num, preNum }: IChartLabel) => {
 							r={radius}
 							cy={25}
 							cx={25}
-							strokeWidth={8}
+							strokeWidth={5}
 							stroke="url(#radial-progress-gradient)"
 							fill="none"
 							strokeDashoffset={offset}

@@ -1,7 +1,8 @@
 .wrap {
 	background: #3E3A50;
 	border-radius: 10px;
-	width: 290px;
+	width: 100%;
+	min-width: 260px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
