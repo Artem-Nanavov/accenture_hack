@@ -10,7 +10,7 @@ const IsAuthWrapper = ({ children }: IProps) => {
 	const { pathname } = useLocation();
 
 	useEffect(() => {
-		if (localStorage.getItem('isAuth') !== 'true' && pathname !== '/login') history.push('/login');
+		if (localStorage.getItem('isAuth') !== 'true' && pathname !== '/login') history.push('/auth');
 
 		if (localStorage.getItem('isAuth') === 'true' && pathname === '/auth') history.push('/c/individuals');
 	}, []);
