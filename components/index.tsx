@@ -7,6 +7,7 @@ import Login from 'pages/auth/login/Login';
 import Products from 'pages/products';
 import Branches from 'pages/branches/Branches';
 
+import NotFound from 'pages/notFound';
 import style from '../core/styles/rootstyle.scss';
 
 const Routes = () => {
@@ -14,7 +15,7 @@ const Routes = () => {
 
 	return (
 		<div className={style.root}>
-			{pathname !== '/auth' && <LeftSidebar />}
+			{pathname !== '/auth' && pathname !== '/notFound' && <LeftSidebar />}
 			<Switch>
 				<Route exact path="/">
 					<Redirect to="/auth" />
@@ -25,6 +26,7 @@ const Routes = () => {
 				<Route exact path="/auth">
 					<Login />
 				</Route>
+				<Route exact path="*" component={NotFound} />
 			</Switch>
 		</div>
 	);
