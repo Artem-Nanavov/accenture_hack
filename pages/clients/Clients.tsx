@@ -14,13 +14,6 @@ import Table from 'components/shared/table/Table';
 import IsAuthWrapper from 'components/shared/IsAuthWrapper';
 import styles from './styles.scss';
 
-const mock_newClients_fiz = [20000, 31000, 25000, 20000, 33000, 19000];
-const mock_profit_fiz = [14, 41234, 1234, 678365, 34, 1567];
-const mock_countOfLeft_fiz = [1, 41, 23, 451, 3, 28];
-
-const mock_newClients_ur = [152, 1541, 25431, 1324, 12345, 1234];
-const mock_profit_ur = [4325, 2323, 1234, 2354, 1234, 1234];
-const mock_countOfLeft_ur = [1231, 12, 23, 1235, 3, 763];
 
 const Clients = observer(() => {
 	const location = useLocation();
@@ -32,11 +25,11 @@ const Clients = observer(() => {
 		if (location.pathname === '/clients/individuals') {
 			switch (typeOfChart) {
 				case 'newClients':
-					return mock_newClients_fiz;
+					return clientsStore.clientsGraphs.mock_newClients_fiz;
 				case 'operations':
-					return mock_countOfLeft_fiz;
+					return clientsStore.clientsGraphs.mock_countOfLeft_fiz;
 				case 'profit':
-					return mock_profit_fiz;
+					return clientsStore.clientsGraphs.mock_profit_fiz;
 				default:
 					return [];
 			}
@@ -44,18 +37,19 @@ const Clients = observer(() => {
 
 		switch (typeOfChart) {
 			case 'newClients':
-				return mock_newClients_ur;
+				return clientsStore.clientsGraphs.mock_newClients_ur;
 			case 'operations':
-				return mock_countOfLeft_ur;
+				return clientsStore.clientsGraphs.mock_countOfLeft_ur;
 			case 'profit':
-				return mock_profit_ur;
+				return clientsStore.clientsGraphs.mock_profit_ur;
 			default:
 				return [];
 		}
-	}, [typeOfChart, location.pathname]);
+	}, [typeOfChart, location.pathname, clientsStore.clientsGraphs]);
 
 	useEffect(() => {
 		clientsStore.getClients();
+		clientsStore.getClientsGraphs();
 	}, []);
 
 	return (
