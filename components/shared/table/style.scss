@@ -1,0 +1,45 @@
+.table {
+	border-collapse: collapse;
+	max-width: 720px;
+	width: 100%;
+
+	thead {
+		tr {
+			td {
+				font-family: 'Raleway', sans-serif;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 23px;
+				color: rgba(255, 255, 255, 0.15);
+				text-align: center;
+				padding: 10px 0;
+			}
+
+			.money {
+				font-family: 'Raleway', sans-serif;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 23px;
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			td {
+				padding: 10px 0;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+				font-family: 'Raleway', sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 20px;
+				line-height: 23px;
+				color: #FFFFFF;
+				text-align: center;
+			}
+		}
+	}
+}

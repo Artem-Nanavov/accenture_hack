@@ -1,0 +1,25 @@
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+
+	.submit {
+		padding: 15px 135px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 30px;
+		line-height: 35px;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.9);
+		background: #3E3A50;
+		border-radius: 10px;
+
+		&:hover {
+			background-color: rgba(62, 58, 80, 0.9);
+		}
+
+		&:active {
+			background-color: rgba(62, 58, 80, 0.7);
+		}
+	}
+}

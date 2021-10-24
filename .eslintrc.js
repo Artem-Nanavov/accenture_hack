@@ -53,6 +53,7 @@ module.exports = {
 		'react/no-did-mount-set-state': 'off',
 		'react/no-unused-prop-types': 'off', // Это всё ещё работает нестабильно
 		'react/jsx-one-expression-per-line': 'off',
+		'jsx-a11y/no-noninteractive-element-interactions': 'off',
 
 		'jsx-a11y/anchor-is-valid': ['error', { components: ['Link'], specialLink: ['to'] }],
 		'jsx-a11y/label-has-for': [

@@ -1,0 +1,66 @@
+.wrap {
+	background: #3E3A50;
+	border-radius: 10px;
+	width: 100%;
+	min-width: 260px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 96px;
+}
+
+.title {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.44px;
+	color: #FFFFFF;
+}
+
+.num {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 32px;
+	letter-spacing: 0.15px;
+	color: #FFFFFF;
+}
+
+.chart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+}
+
+.df {
+	margin-left: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& p {
+		font-family: Raleway;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.44px;
+		margin-left: 6px;
+	}
+}
+
+.plusNum {
+	color: #5EFF5A;
+}
+
+.minusNum {
+	color: #FF0000;
+}
