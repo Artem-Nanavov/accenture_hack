@@ -5,10 +5,10 @@ configure({
 	useProxies: 'never',
 });
 
-class ClientsStore {
+class AuthStore {
 	@observable isLoading = false;
 
-	@observable clientsInfo: any = null;
+	@observable isAuth: any = false;
 
 	constructor() {
 		makeAutoObservable(this);
@@ -18,16 +18,21 @@ class ClientsStore {
 		this.isLoading = !this.isLoading;
 	}
 
-	@action async getClients() {
+	@action async login(email: string, password: string) {
 		try {
-			const { data } = await axios.get('/clients');
+			this.isLoading = true;
 
-			this.clientsInfo = data;
+			await axios.post('/login', { email, password }, { withCredentials: true });
+
+			this.isAuth = true;
+			localStorage.setItem('isAuth', 'true');
 		} catch (e) {
 			// eslint-disable-next-line no-console
 			console.error('error', e.message);
+		} finally {
+			this.isLoading = false;
 		}
 	}
 }
 
-export default ClientsStore;
+export default AuthStore;

@@ -33,6 +33,10 @@ export const useClientsStore = () => {
 	return clientsStore;
 };
 
+export const useAuthStore = () => {
+	const { authStore } = useRootStore();
+	return authStore;
+};
 export const RootStoreProvider = ({ children }: { children: ReactNode }) => {
 	const _store = initializeStore();
 

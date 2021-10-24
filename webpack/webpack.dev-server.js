@@ -4,6 +4,8 @@ const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.development.config');
 const { port, host } = require('../config/dev');
 
+const server_url = 'http://192.168.43.16:8888/';
+
 const options = {
 	contentBase: false,
 	hot: true,
@@ -17,7 +19,32 @@ const options = {
 	watchOptions: {
 		ignored: /node_modules/,
 	},
-	proxy: {},
+	proxy: {
+		'/entity': {
+			target: `${server_url}entity/`,
+			pathRewrite: { '^/entity': '' },
+			changeOrigin: true,
+			secure: false,
+		},
+		'/login': {
+			target: `${server_url}login/`,
+			pathRewrite: { '^/login': '' },
+			changeOrigin: true,
+			secure: false,
+		},
+		'/plan': {
+			target: `${server_url}plan/`,
+			pathRewrite: { '^/plan': '' },
+			changeOrigin: true,
+			secure: false,
+		},
+		'/clients': {
+			target: `${server_url}clients/`,
+			pathRewrite: { '^/clients': '' },
+			changeOrigin: true,
+			secure: false,
+		},
+	},
 };
 
 WebpackDevServer.addDevServerEntrypoints(webpackConfig, options);
