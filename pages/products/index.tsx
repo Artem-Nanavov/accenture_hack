@@ -102,16 +102,15 @@ const Products = () => {
 				</div>
 
 				<Bar _data={data} />
-
-				<div className={styles.blocks}>
-					<ChartLabel num={1820000} progress={32} preNum={1000000} title="Доход от физ.лиц" />
-					<ChartLabel num={1820000} progress={68} preNum={10000000} title="Доход от физ.лиц" />
-					<LineLabel num={137} planNum={438} title="Доход от физ.лиц" />
-					<ChartLabel num={1820000} progress={68} preNum={10000000} title="Операции физ.лиц" />
-					<ChartLabel num={1820000} progress={32} preNum={1000000} title="Операции физ.лиц" />
-					<LineLabel num={182} planNum={438} title="Доход от физ.лиц" />
-				</div>
 			</Wrapper>
+			<div className={styles.blocks}>
+				<ChartLabel num={1820000} progress={32} preNum={1000000} title="Доход от физ.лиц" />
+				<ChartLabel num={1820000} progress={68} preNum={10000000} title="Доход от физ.лиц" />
+				<LineLabel num={137} planNum={438} title="Доход от физ.лиц" />
+				<ChartLabel num={1820000} progress={68} preNum={10000000} title="Операции физ.лиц" />
+				<ChartLabel num={1820000} progress={32} preNum={1000000} title="Операции физ.лиц" />
+				<LineLabel num={182} planNum={438} title="Доход от физ.лиц" />
+			</div>
 
 			<RightSidebar isViewCompareInfoBlock isViewInvestsComponents />
 		</WrapperWithSidebar>

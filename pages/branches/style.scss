@@ -1,3 +1,7 @@
+.gridArea {
+	grid-area: main;
+}
+
 .container {
 	padding: 80px 0 0 80px;
 
@@ -33,11 +37,13 @@
 		display: flex;
 		gap: 20px;
 	}
+}
 
-	.graphCont {
-		padding-top: 34px;
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-	}
+.graphCont {
+	padding: 0 25px 80px 80px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 15px;
+	grid-area: sec;
 }

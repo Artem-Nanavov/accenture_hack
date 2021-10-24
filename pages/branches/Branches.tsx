@@ -28,11 +28,9 @@ const Branches = observer(() => {
 		branchesStore.getClientsCircle('1');
 	}, []);
 
-	console.log(toJS(branchesStore.clientsCircle));
-
 	return (
 		<WrapperWithSidebar>
-			<Wrapper>
+			<Wrapper className={style.gridArea}>
 				<div className={style.container}>
 					<div className={style.selectLine}>
 						<p onClick={() => setIsAll(true)} className={isAll ? style.headerLine : style.headerLineAll}>
@@ -50,34 +48,34 @@ const Branches = observer(() => {
 							<DescriptionContainer isRating header="Рейтинг" description="1" />
 						</div>
 					)}
-					<div className={style.graphCont}>
-						{branchesStore.clientsCircle && (
-							<>
-								<DoughnutCard
-									changeOption={isIndividual}
-									handleChange={setIsIndividual}
-									isChoice={!isAll}
-									title="Физические лица"
-									data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
-									labels={labels}
-								/>
-
-								{!isAll ? (
-									<DoughnutCard isChoice={false} title="Выполнение плана" data={data3} labels={labels2} />
-								) : (
-									<DoughnutCard
-										isChoice={false}
-										title="Юридические лица"
-										data={branchesStore.clientsCircle.is_legal_entity}
-										labels={labels}
-									/>
-								)}
-							</>
-						)}
-					</div>
 				</div>
 			</Wrapper>
 			<RightSidebar />
+			<div className={style.graphCont}>
+				{branchesStore.clientsCircle && (
+					<>
+						<DoughnutCard
+							changeOption={isIndividual}
+							handleChange={setIsIndividual}
+							isChoice={!isAll}
+							title="Физические лица"
+							data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
+							labels={labels}
+						/>
+
+						{!isAll ? (
+							<DoughnutCard isChoice={false} title="Выполнение плана" data={data3} labels={labels2} />
+						) : (
+							<DoughnutCard
+								isChoice={false}
+								title="Юридические лица"
+								data={branchesStore.clientsCircle.is_legal_entity}
+								labels={labels}
+							/>
+						)}
+					</>
+				)}
+			</div>
 		</WrapperWithSidebar>
 	);
 });
