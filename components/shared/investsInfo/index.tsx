@@ -15,7 +15,7 @@ const InvestsComponents = () => (
 
 			<div className={styles.col2}>
 				<p className={styles.text}>{FormatNumber(2354333)}</p>
-				<Indicator isPlus={false} />
+				<Indicator isPlus />
 			</div>
 		</div>
 
@@ -29,7 +29,7 @@ const InvestsComponents = () => (
 			<div className={styles.col2}>
 				<p className={styles.text}>{FormatNumber(1453333)}</p>
 
-				<Indicator isPlus={true} />
+				<Indicator isPlus={false} />
 			</div>
 		</div>
 
@@ -43,7 +43,7 @@ const InvestsComponents = () => (
 			<div className={styles.col2}>
 				<p className={styles.text}>{FormatNumber(1003000)}</p>
 
-				<Indicator isPlus={false} />
+				<Indicator isPlus />
 			</div>
 		</div>
 

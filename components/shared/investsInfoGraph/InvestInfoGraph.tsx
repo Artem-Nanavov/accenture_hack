@@ -12,12 +12,12 @@ const mockArrayData = [
 	{
 		name: 'Депозиты',
 		count: 123,
-		isPlus: true,
+		isPlus: false,
 	},
 	{
 		name: 'Кредиты',
 		count: 600,
-		isPlus: false,
+		isPlus: true,
 	},
 	{
 		name: 'Др. металлы',
@@ -27,7 +27,7 @@ const mockArrayData = [
 	{
 		name: 'Инвестиции',
 		count: 823,
-		isPlus: false,
+		isPlus: true,
 	},
 ];
 
@@ -37,8 +37,6 @@ const ColorOfGraph = ({ count }: { count: number }) => {
 			return <RedGraph />;
 		case count < 700:
 			return <YellowGraph />;
-		case count < 800:
-			return <VioletGraph />;
 		default:
 			return <GreenGraph />;
 	}
