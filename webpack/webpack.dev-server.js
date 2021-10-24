@@ -26,6 +26,18 @@ const options = {
 			changeOrigin: true,
 			secure: false,
 		},
+		'/clients-graph': {
+			target: `${server_url}clients-graph/`,
+			pathRewrite: { '^/clients-graph': '' },
+			changeOrigin: true,
+			secure: false,
+		},
+		'/products-graph': {
+			target: `${server_url}products-graph/`,
+			pathRewrite: { '^/products-graph': '' },
+			changeOrigin: true,
+			secure: false,
+		},
 		'/login': {
 			target: `${server_url}login/`,
 			pathRewrite: { '^/login': '' },

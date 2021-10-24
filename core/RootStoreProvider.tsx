@@ -37,6 +37,12 @@ export const useAuthStore = () => {
 	const { authStore } = useRootStore();
 	return authStore;
 };
+
+export const useProductsStore = () => {
+	const { productsStore } = useRootStore();
+	return productsStore;
+};
+
 export const RootStoreProvider = ({ children }: { children: ReactNode }) => {
 	const _store = initializeStore();
 
