@@ -1,7 +1,9 @@
 /* eslint-disable indent */
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import axios from 'axios';
+import { observer } from 'mobx-react-lite';
+
+import { useClientsStore } from 'core/RootStoreProvider';
 
 import Wrapper from 'components/shared/wrapper/Wrapper';
 import WrapperWithSidebar from 'components/shared/wrapperWithSidebar/wrapperWithSidebar';
@@ -19,8 +21,9 @@ const mock_newClients_ur = [152, 1541, 25431, 1324, 12345, 1234];
 const mock_profit_ur = [4325, 2323, 1234, 2354, 1234, 1234];
 const mock_countOfLeft_ur = [1231, 12, 23, 1235, 3, 763];
 
-const Clients = () => {
+const Clients = observer(() => {
 	const location = useLocation();
+	const clientsStore = useClientsStore();
 
 	const [typeOfChart, setTypeOfChart] = useState<'newClients' | 'profit' | 'operations'>('newClients');
 
@@ -50,14 +53,9 @@ const Clients = () => {
 		}
 	}, [typeOfChart, location.pathname]);
 
-	// axios
-	// 	.get('http://127.20.10.3:8888/clients')
-	// 	.then((data) => {
-	// 		console.log('==========>data', data);
-	// 	})
-	// 	.catch((e) => {
-	// 		console.log('==========>e', e);
-	// 	});
+	useEffect(() => {
+		clientsStore.getClients();
+	}, []);
 
 	return (
 		<WrapperWithSidebar>
@@ -95,11 +93,11 @@ const Clients = () => {
 
 				<HorChart _data={data} />
 
-				<Table className={styles.table} />
+				{clientsStore.clientsInfo && <Table className={styles.table} data={clientsStore.clientsInfo} />}
 			</Wrapper>
 			<RightSidebar isViewCompareInfoBlock isViewInvestsComponents />
 		</WrapperWithSidebar>
 	);
-};
+});
 
 export default Clients;

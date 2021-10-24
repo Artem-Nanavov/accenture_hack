@@ -28,6 +28,11 @@ export const useBranchesStore = () => {
 	return branchesStore;
 };
 
+export const useClientsStore = () => {
+	const { clientsStore } = useRootStore();
+	return clientsStore;
+};
+
 export const RootStoreProvider = ({ children }: { children: ReactNode }) => {
 	const _store = initializeStore();
 

@@ -3,60 +3,28 @@ import cn from 'classnames';
 
 import style from './style.scss';
 
-const mockData = [
-	{
-		name: 'Васильев И.Е.',
-		date: '15.05.2015 23:55',
-		quantity: 1395,
-		money: 83305,
-	},
-	{
-		name: 'Васильев И.Е.',
-		date: '15.05.2015 23:55',
-		quantity: 1395,
-		money: 83305,
-	},
-	{
-		name: 'Васильев И.Е.',
-		date: '15.05.2015 23:55',
-		quantity: 1395,
-		money: 83305,
-	},
-	{
-		name: 'Васильев И.Е.',
-		date: '15.05.2015 23:55',
-		quantity: 1395,
-		money: 83305,
-	},
-	{
-		name: 'Васильев И.Е.',
-		date: '15.05.2015 23:55',
-		quantity: 1395,
-		money: 83305,
-	},
-];
-
 interface ITable {
 	className?: string;
+	data: any[];
 }
 
-const Table = ({ className }: ITable) => (
+const Table = ({ className, data }: any) => (
 	<table className={cn(style.table, className)}>
 		<thead>
 			<tr>
 				<td>Имя</td>
 				<td>Дата регистрации</td>
 				<td>Кол-во операций</td>
-				<td className={style.money}>Прибыль</td>
+				<td>Прибыль</td>
 			</tr>
 		</thead>
 		<tbody>
-			{mockData.map(({ name, date, quantity, money }) => (
-				<tr>
-					<td>{name}</td>
-					<td>{date}</td>
-					<td>{quantity}</td>
-					<td>{money} р.</td>
+			{data.map(({ username, created_at, operations_count, operations_plus }: any) => (
+				<tr key={username}>
+					<td>{username}</td>
+					<td>{new Date(created_at).toLocaleDateString('en-US')}</td>
+					<td>{operations_count}</td>
+					<td>{operations_plus} р.</td>
 				</tr>
 			))}
 		</tbody>

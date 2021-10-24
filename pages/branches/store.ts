@@ -20,7 +20,7 @@ class BranchesStore {
 
 	@action async getClientsCircle(branch_id: string) {
 		try {
-			const { data } = await axios.get(`http://192.168.43.16:8888/clients/circle?branch_id=${branch_id}`);
+			const { data } = await axios.get(`http://192.168.43.16:8888/entity?branch_id=${branch_id}`);
 
 			if (data) {
 				this.clientsCircle = {
