@@ -20,6 +20,7 @@ class RootStore {
 		this.clientsStore = new ClientsStore();
 		this.authStore = new AuthStore();
 		this.productsStore = new ProductsStore();
+		this.uploadStore = new UploadStore();
 	}
 }
 
