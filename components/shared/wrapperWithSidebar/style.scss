@@ -1,5 +1,16 @@
 .sidebar {
-	display: flex;
+	display: grid;
 	flex-direction: row;
 	width: 100%;
+	grid-template-areas: "main main main main side"
+		"main main main main side"
+		"main main main main side"
+		"sec sec sec sec sec";
+
+	.graphCont {
+		padding-top: 34px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
 }

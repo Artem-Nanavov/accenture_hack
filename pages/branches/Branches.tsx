@@ -53,40 +53,40 @@ const Branches = observer(() => {
 								<DescriptionContainer isRating header="Рейтинг" description="1" />
 							</div>
 						)}
-						<div className={style.graphCont}>
-							{branchesStore.clientsCircle && (
-								<>
-									<DoughnutCard
-										changeOption={isIndividual}
-										handleChange={setIsIndividual}
-										isChoice={!isAll}
-										title="Физические лица"
-										data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
-										labels={labels}
-									/>
-
-									{!isAll ? (
-										<DoughnutCard
-											isChoice={false}
-											title="Выполнение плана"
-											changeColor
-											// @ts-ignore
-											data={Object.values(branchesStore.planData).map((v) => ({ count: v }))}
-											labels={labels2}
-										/>
-									) : (
-										<DoughnutCard
-											isChoice={false}
-											title="Юридические лица"
-											data={branchesStore.clientsCircle.is_legal_entity}
-											labels={labels}
-										/>
-									)}
-								</>
-							)}
-						</div>
 					</div>
 				</Wrapper>
+				<div className={style.graphCont}>
+					{branchesStore.clientsCircle && (
+						<>
+							<DoughnutCard
+								changeOption={isIndividual}
+								handleChange={setIsIndividual}
+								isChoice={!isAll}
+								title="Физические лица"
+								data={isIndividual ? branchesStore.clientsCircle.other : branchesStore.clientsCircle.is_legal_entity}
+								labels={labels}
+							/>
+
+							{!isAll ? (
+								<DoughnutCard
+									isChoice={false}
+									title="Выполнение плана"
+									changeColor
+									// @ts-ignore
+									data={Object.values(branchesStore.planData).map((v) => ({ count: v }))}
+									labels={labels2}
+								/>
+							) : (
+								<DoughnutCard
+									isChoice={false}
+									title="Юридические лица"
+									data={branchesStore.clientsCircle.is_legal_entity}
+									labels={labels}
+								/>
+							)}
+						</>
+					)}
+				</div>
 				<RightSidebar />
 			</WrapperWithSidebar>
 		</IsAuthWrapper>

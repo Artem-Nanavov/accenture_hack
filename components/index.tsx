@@ -20,7 +20,7 @@ const Routes = () => {
 				<Route exact path="/">
 					<Redirect to="/auth" />
 				</Route>
-				<Route exact path="/c/:id" component={Clients} />
+				<Route exact path="/users/:id" component={Clients} />
 				<Route exact path="/products/:id" component={Products} />
 				<Route exact path="/branches" component={Branches} />
 				<Route exact path="/auth">

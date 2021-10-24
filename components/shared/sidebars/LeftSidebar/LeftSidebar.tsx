@@ -10,8 +10,8 @@ import style from './style.scss';
 const lines = [
 	{
 		name: 'Клиенты',
-		cur: 'c',
-		url: '/c/individuals',
+		cur: 'users',
+		url: '/users/individuals',
 		image: client,
 	},
 	{
