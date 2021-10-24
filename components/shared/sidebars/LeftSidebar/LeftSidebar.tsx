@@ -10,16 +10,19 @@ import style from './style.scss';
 const lines = [
 	{
 		name: 'Клиенты',
+		cur: 'clients',
 		url: '/clients/individuals',
 		image: client,
 	},
 	{
 		name: 'Продукты',
-		url: '/products/all',
+		cur: 'products',
+		url: '/products/credits',
 		image: product,
 	},
 	{
 		name: 'Филлиалы',
+		cur: 'branches',
 		url: '/branches',
 		image: branch,
 	},
@@ -29,7 +32,7 @@ const LeftSidebar = () => (
 	<div className={style.sidebar}>
 		<p className={style.title}>Your Buisness</p>
 		{lines.map((e, index) => (
-			<SidebarLine key={index} header={e.name} url={e.url} image={e.image} />
+			<SidebarLine cur={e.cur} key={index} header={e.name} url={e.url} image={e.image} />
 		))}
 	</div>
 );

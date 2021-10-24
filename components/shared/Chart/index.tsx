@@ -31,6 +31,18 @@ const options = {
 	},
 };
 
-const Chart = () => <Bar data={data} options={options as any} />;
+const Chart = ({ _data }: any) => {
+	const d = {
+		...data,
+		datasets: [
+			{
+				...data.datasets[0],
+				data: _data,
+			},
+		],
+	};
+
+	return <Bar data={d} options={options as any} />;
+};
 
 export default Chart;

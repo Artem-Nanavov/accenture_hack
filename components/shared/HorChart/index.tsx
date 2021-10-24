@@ -32,6 +32,18 @@ const options = {
 	},
 };
 
-const HorChart = () => <Bar data={data} options={options as any} />;
+const HorChart = ({ _data }: any) => {
+	const d = {
+		...data,
+		datasets: [
+			{
+				...data.datasets[0],
+				data: _data,
+			},
+		],
+	};
+
+	return <Bar data={d} options={options as any} />;
+};
 
 export default HorChart;
