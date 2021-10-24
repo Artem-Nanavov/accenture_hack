@@ -106,8 +106,8 @@ const Products = () => {
 						</p>
 					</div>
 
-				<Bar _data={data} />
-			</Wrapper>
+					<Bar _data={data} />
+				</Wrapper>
 				<div className={styles.blocks}>
 					<ChartLabel num={1820000} progress={32} preNum={1000000} title="Доход от физ.лиц" />
 					<ChartLabel num={1820000} progress={68} preNum={10000000} title="Доход от физ.лиц" />

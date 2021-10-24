@@ -63,11 +63,11 @@ const Clients = observer(() => {
 			<WrapperWithSidebar>
 				<Wrapper className={styles.wrap}>
 					<div className={styles.header}>
-						<NavLink activeClassName={styles.link_active} className={styles.link} to="/c/individuals">
+						<NavLink activeClassName={styles.link_active} className={styles.link} to="/users/individuals">
 							Физические лица
 						</NavLink>
 
-						<NavLink to="/c/legal" activeClassName={styles.link_active} className={styles.link}>
+						<NavLink to="/users/legal" activeClassName={styles.link_active} className={styles.link}>
 							Юридические лица
 						</NavLink>
 					</div>
