@@ -31,7 +31,7 @@
 			"assets/*":["./assets/*"],
 			"pages/*":["./pages/*"]
 		},
-		"lib": ["es6", "dom", "es2018.promise", "ES2017", "ES2016.Array.Include"]
+		"lib": ["es6", "dom", "es2018.promise", "ES2017", "ES2016.Array.Include", "es2015", "es2016"]
 	},
 	"exclude": ["node_modules"]
 }

@@ -15,7 +15,6 @@ import IsAuthWrapper from 'components/shared/IsAuthWrapper';
 import style from './style.scss';
 
 const data = ['г. Ростов-на-Дону, пер Куйбышевский, д. 122/30'];
-const data3 = [{ count: 141 }, { count: 335 }, { count: 737 }];
 const labels = ['Кредиты', 'Средства клиентов', 'Ипотека'];
 const labels2 = ['Перевыполнили', 'Выполнили', 'Не выполнили'];
 

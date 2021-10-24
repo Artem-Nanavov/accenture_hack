@@ -2,6 +2,7 @@ import BranchesStore from 'pages/branches/store';
 import ClientsStore from 'pages/clients/store';
 import AuthStore from 'pages/auth/store';
 import ProductsStore from 'pages/products/store';
+import UploadStore from 'pages/upload/store';
 
 class RootStore {
 	branchesStore: BranchesStore;
@@ -11,6 +12,8 @@ class RootStore {
 	authStore: AuthStore;
 
 	productsStore: ProductsStore;
+
+	uploadStore: UploadStore;
 
 	constructor() {
 		this.branchesStore = new BranchesStore();

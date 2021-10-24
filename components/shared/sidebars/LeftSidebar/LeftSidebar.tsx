@@ -1,9 +1,10 @@
 import React from 'react';
 import SidebarLine from 'components/shared/sidebars/LeftSidebar/SidebarLine';
 
-import branch from '../../../../assets/images/png/branch.png';
-import client from '../../../../assets/images/png/client.png';
-import product from '../../../../assets/images/png/product.png';
+import branch from 'assets/images/png/branch.png';
+import client from 'assets/images/png/client.png';
+import product from 'assets/images/png/product.png';
+import upload from 'assets/images/png/upload.svg';
 
 import style from './style.scss';
 
@@ -25,6 +26,12 @@ const lines = [
 		cur: 'branches',
 		url: '/branches',
 		image: branch,
+	},
+	{
+		name: 'Загрузить данные',
+		cur: 'files',
+		url: '/files',
+		image: upload,
 	},
 ];
 

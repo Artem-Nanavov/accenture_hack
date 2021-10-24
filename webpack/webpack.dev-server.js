@@ -56,6 +56,12 @@ const options = {
 			changeOrigin: true,
 			secure: false,
 		},
+		'/upload': {
+			target: `${server_url}upload/`,
+			pathRewrite: { '^/upload': '' },
+			changeOrigin: true,
+			secure: false,
+		},
 	},
 };
 

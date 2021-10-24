@@ -33,6 +33,11 @@ export const useClientsStore = () => {
 	return clientsStore;
 };
 
+export const useUploadStore = () => {
+	const { uploadStore } = useRootStore();
+	return uploadStore;
+};
+
 export const useAuthStore = () => {
 	const { authStore } = useRootStore();
 	return authStore;
